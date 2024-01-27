@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-{% load media %}
+{% load staticfiles %}
 
 <html>
 
@@ -20,10 +20,8 @@
                  alt = "Picture of Rango" />     
         </div>
         <div>
-            <img src = "{% media 'cat.jpg' %}"
-                alt = "Picture of a Cat." /> 
+            <img src="{{ MEDIA_URL }}cat.jpg" 
+                alt = "Picture of a Cat." />    
         </div>
     </body>
-
-
 </html>
