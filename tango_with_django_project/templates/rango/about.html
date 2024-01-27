@@ -9,15 +9,18 @@
     </head>
 
     <body>
-        <h1>Rango says...</h1>
+        <h1>Rango says... <br>here is the about page.</h1>
         <div>
             hey there partner! <br />
-            <strong>{{ boldmessage }} </strong><br />
+            <strong>This tutorial has been put together by Scott McKenzie</strong><br />
         </div>
         <div>
-            <a href="/rango/">Index</a><br /> 
+            <a href="/rango/about/">About</a><br /> 
             <img src = "{% static 'images/rango.jpg' %}"
                  alt = "Picture of Rango" /> 
+            
+            <img src = "{% media 'images/cat.jpg' %}"
+                alt = "Picture of Cat" /> 
         </div>
     </body>
 
