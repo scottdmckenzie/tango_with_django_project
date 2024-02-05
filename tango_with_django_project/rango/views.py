@@ -41,7 +41,7 @@ def add_category(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save(commit = True)
-            return redirect('/rango/')
+            return redirect(reverse('rango:index'))
         else:
             print(form.errors)
     return render(request, 'rango/add_category.html', {'form': form})
@@ -52,7 +52,7 @@ def add_page(request, category_name_slug):
     except:
         category = None 
     if category is None:
-        return redirect('/rango/')
+        return redirect(reverse('rango:index'))
     
     form = PageForm(request.POST)
     if request.method == 'POST':
@@ -67,6 +67,6 @@ def add_page(request, category_name_slug):
                 return redirect(reverse('rango:show_category', kwargs = {'category_name_slug': category_name_slug}))
         else:
             print(form.errors)
-    context_dict = {'form' : form, 'category' : category}
+    context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context=context_dict)
 
